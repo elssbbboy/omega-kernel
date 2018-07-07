@@ -1,9 +1,12 @@
-set PATH=C:\devkitPro\msys\bin;C:\devkitPro\devkitARM_r47\bin;%PATH%
-set DEVKITARM=/c/devkitPro/devkitARM_r47
+set PATH=C:\devkitPro\msys2\mingw64\bin;C:\devkitPro\devkitARM\bin;%PATH%
+set DEVKITARM=/c/devkitPro/devkitARM
 set DEVKITPRO=/c/devkitPro
 set LIBGBA=/c/devkitPro/libgba
 
 make  
 rem >error.txt 2>&1
+
+IF EXIST omega-kernel.gba (rename omega-kernel.gba ezkernel.bin)
+IF EXIST omega-kernel.elf (del omega-kernel.elf)
+
 pause
-build.bat
